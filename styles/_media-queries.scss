@@ -1,0 +1,10 @@
+@mixin tablet {
+  @media screen and(max-width:768px) {
+    @content; //@mixinの中で@content;と記述するとコンテントブロックを渡すことができる
+  }
+}
+@mixin mobile {
+  @media screen and(max-width:300px) {
+    @content;
+  }
+}

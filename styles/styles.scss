@@ -1,0 +1,115 @@
+@import "navbar";
+* {
+  box-sizing: border-box; //パディングとボーダーを幅と高さに含める
+  margin: 0;
+  padding: 0;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.hero {
+  padding-top: 1.2rem;
+  background-color: $light;
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; //frは比を表す(残りの幅にも使われる)
+    align-items: center;
+    justify-items: center;
+    z-index: 1;
+    max-width: 1200px;
+    height: 90vh;
+    width: 100%;
+    margin: 0 auto;
+    padding-right: 24px;
+    padding-left: 24px;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      height: 100%;
+    }
+
+    &--left {
+      width: 100%;
+      line-height: 1.2; //行の高さ
+
+      @include tablet {
+        padding: 5rem 0;
+      }
+
+      @include mobile {
+        line-height: 1.8rem;
+      }
+    }
+
+    &--left h1 {
+      font-size: 4rem;
+      color: $lime;
+
+      @include mobile {
+        font-size: 1.5rem;
+      }
+    }
+    &--left h2 {
+      font-size: 4rem;
+      color: $dark;
+
+      @include mobile {
+        font-size: 1.5rem;
+      }
+    }
+    &--left p {
+      font-size: 4rem;
+      margin-top: 1rem;
+      color: $dark;
+      font-size: 2rem;
+      font-weight: 700;
+
+      @include mobile {
+        font-size: 1.5rem;
+      }
+    }
+
+    &--btn {
+      font-size: 1rem;
+      margin-top: 2rem;
+      border-radius: 4px;
+      background-color: $lime;
+      border: none;
+      padding: 14px 36px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s;
+      outline: none;
+    }
+
+    &--btn a {
+      position: relative;
+      z-index: 2;
+      text-decoration: none;
+      color: $light;
+    }
+    &--btn:after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: $orangeRed;
+      transition: all 0.3s;
+      border-radius: 4px;
+    }
+
+    &--btn:hover:after {
+      width: 100%;
+    }
+
+    &--right {
+      text-align: center;
+    }
+
+    &--img {
+      height: 100%;
+      width: 80%;
+    }
+  }
+}
